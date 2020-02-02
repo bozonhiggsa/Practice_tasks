@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems,
+Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/j2ee/dtds/web-app_2_3.dtd">
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+
+    <context-param>
+        <param-name>sports</param-name>
+        <param-value>Football Biathlon Basketball</param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>CalcServlet</servlet-name>
+        <servlet-class>
+            ua.examples.practice.practice8.servlets.CalcServlet
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CalcServlet</servlet-name>
+        <url-pattern>/calc</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CalcPostServlet</servlet-name>
+        <servlet-class>
+            ua.examples.practice.practice8.servlets.CalcPostServlet
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CalcPostServlet</servlet-name>
+        <url-pattern>/calc_post</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>VotePostServlet</servlet-name>
+        <servlet-class>
+            ua.examples.practice.practice8.servlets.VotePostServlet
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VotePostServlet</servlet-name>
+        <url-pattern>/vote</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ResultVoteServlet</servlet-name>
+        <servlet-class>
+            ua.examples.practice.practice8.servlets.ResultVoteServlet
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResultVoteServlet</servlet-name>
+        <url-pattern>/result_vote</url-pattern>
+    </servlet-mapping>
+
+
+    <filter>
+        <filter-name>loginFilter</filter-name>
+        <filter-class>
+            ua.examples.practice.practice8.filters.Filter1
+        </filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>loginFilter</filter-name>
+        <url-pattern>/create</url-pattern>
+    </filter-mapping>
+
+    <welcome-file-list>
+        <welcome-file>Welcome.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>
